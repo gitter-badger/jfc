@@ -24,6 +24,9 @@ import cats.data.Xor
  * navigation and modification operations, and `M` is a type class that includes
  * the operations that we need for `withFocusM`.
  *
+ * @groupname ArrayNavigation Array navigation
+ * @groupdesc ArrayNavigation Operations for moving around an array.
+ *
  * @author Travis Brown
  */
 trait GenericCursor[C <: GenericCursor[C]] {
@@ -89,16 +92,22 @@ trait GenericCursor[C <: GenericCursor[C]] {
 
   /**
    * If the focus is an element in a JSON array, move to the left.
+   *
+   * @group ArrayNavigation
    */
   def left: Result
 
   /**
    * If the focus is an element in a JSON array, move to the right.
+   *
+   * @group ArrayNavigation
    */
   def right: Result
 
   /**
    * If the focus is an element in a JSON array, move to the first element.
+   *
+   * @group ArrayNavigation
    */
   def first: Result
 
